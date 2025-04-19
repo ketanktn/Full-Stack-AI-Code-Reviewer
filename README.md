@@ -40,11 +40,12 @@ Before you begin, make sure you have the following installed on your local machi
 1. Start the backend server:
     ```bash
   node server.js
-2.Open the application in your browser:
+
+### Open the application in your browser:
 Visit http://localhost:3000 to access the application.
 
 
-##Usage
+## Usage
 Submit your code through the frontend interface.
 
 The backend processes the code and passes it to the AI model.
