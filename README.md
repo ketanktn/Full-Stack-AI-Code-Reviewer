@@ -39,7 +39,7 @@ Before you begin, make sure you have the following installed on your local machi
 ### Running the Application Locally
 1. Start the backend server:
     ```bash
-  node server.js
+     node server.js
 
 ### Open the application in your browser:
 Visit http://localhost:3000 to access the application.
