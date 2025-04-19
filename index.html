@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Review Assistant</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Code Review Assistant</h1>
+     
+    </header>
+
+    <main>
+      <div class="code-input-section">
+        <div class="input-header">
+          <h2>Code Input</h2>
+          <div class="language-selector">
+            <label for="language-select">Language</label>
+            <select id="language-select">
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="csharp">C#</option>
+              <option value="cpp">C++</option>
+              <option value="typescript">TypeScript</option>
+              <option value="php">PHP</option>
+              <option value="ruby">Ruby</option>
+              <option value="go">Go</option>
+              <option value="swift">Swift</option>
+              <option value="kotlin">Kotlin</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="code-editor-container">
+          <textarea id="code-editor" placeholder="Enter your code here..." spellcheck="false"></textarea>
+        </div>
+
+        <button id="review-button" class="review-button">Get Code Review</button>
+        <div id="error-message" class="error-message"></div>
+      </div>
+
+      <div id="review-results" class="review-results hidden">
+        <h2>Code Review Results</h2>
+
+        <div class="review-section">
+          <h3>Summary</h3>
+          <p id="review-summary"></p>
+        </div>
+
+        <div id="issues-section" class="review-section">
+          <h3>Issues Found</h3>
+          <ul id="issues-list" class="issues-list"></ul>
+        </div>
+
+        <div class="review-section">
+          <h3>Best Practices</h3>
+          <ul id="best-practices-list"></ul>
+        </div>
+
+        <div class="review-section">
+          <h3>Improvement Suggestions</h3>
+          <p id="improvement-suggestions"></p>
+        </div>
+      </div>
+
+      <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Analyzing your code...</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 Code Review Assistant</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

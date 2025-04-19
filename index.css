@@ -1,0 +1,293 @@
+:root {
+  --primary-color: #3A3E59;
+  --secondary-color: #1D1E2C;
+  --accent-color: #4C5FEF;
+  --text-color: #FFFFFF;
+  --background-color: #121212;
+  --input-background: #1E1E30;
+  --border-color: #2C2C3A;
+  --error-color: #FF5252;
+  --success-color: #4CAF50;
+  --warning-color: #FFC107;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+header p {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.code-input-section {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-header h2 {
+  font-size: 1.5rem;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-selector label {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.language-selector select {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.code-editor-container {
+  margin-bottom: 1rem;
+}
+
+#code-editor {
+  width: 100%;
+  min-height: 300px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.review-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.review-button:hover {
+  background-color: #3A4ED0;
+}
+
+.review-button:disabled {
+  background-color: #5A5A7A;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.review-results {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.review-results h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.review-section {
+  margin-bottom: 1.5rem;
+}
+
+.review-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.issues-list {
+  list-style: none;
+}
+
+.issue-item {
+  background-color: var(--input-background);
+  border-left: 4px solid gray;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.issue-item.critical {
+  border-left-color: var(--error-color);
+}
+
+.issue-item.major {
+  border-left-color: var(--warning-color);
+}
+
+.issue-item.minor {
+  border-left-color: #3498db;
+}
+
+.issue-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.issue-severity {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.75rem;
+}
+
+.issue-item.critical .issue-severity {
+  background-color: rgba(255, 82, 82, 0.2);
+  color: var(--error-color);
+}
+
+.issue-item.major .issue-severity {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--warning-color);
+}
+
+.issue-item.minor .issue-severity {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+}
+
+.issue-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.issue-description {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.issue-suggestion {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.issue-suggestion h4 {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--success-color);
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #6a6a8c;
+  font-size: 0.9rem;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--accent-color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .input-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
